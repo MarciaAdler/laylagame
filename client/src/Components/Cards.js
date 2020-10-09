@@ -20,18 +20,17 @@ const styles = {
   },
 };
 function Cards(props) {
-  let sum = 0;
-  function selectCard(value) {
-    sum += props.value;
-    console.log(props.value);
-  }
+  //   function selectCard(value) {
+  //     sum += props.value;
+  //     console.log(props.value);
+  //   }
   return (
     <Col className="col-lg-3 col-md-4 col-sm-6">
       <img
         style={styles.card}
         src={props.image}
         onClick={() => {
-          selectCard(props);
+          props.selectCard(props);
         }}
       />
     </Col>

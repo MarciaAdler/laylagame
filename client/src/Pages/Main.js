@@ -13,6 +13,7 @@ class Main extends Component {
   state = {
     cards,
     goalValue: 0,
+    sum: 0,
   };
 
   render() {
@@ -32,6 +33,10 @@ class Main extends Component {
 
       console.log(this.state.goalValue);
     }
+    function selectCard(value) {
+      this.setState({ sum: this.state.sum + value.value });
+      console.log(value.value);
+    }
     return (
       <Container style={styles.container}>
         <GameButton
@@ -43,10 +48,16 @@ class Main extends Component {
         <SelectedNumbers
           cardvalue={cardvalue}
           goalValue={this.state.goalValue}
+          sum={this.state.sum}
         />
         <Row className="justify-content-center">
           {this.state.cards.map((card) => (
-            <Cards key={card.id} value={card.id} image={card.image} />
+            <Cards
+              key={card.id}
+              value={card.id}
+              image={card.image}
+              selectCard={selectCard.bind(this)}
+            />
           ))}
         </Row>
       </Container>
