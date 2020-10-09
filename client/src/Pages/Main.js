@@ -15,6 +15,7 @@ class Main extends Component {
     goalValue: 0,
     sum: 0,
     selected: [],
+    startMessage: "",
   };
 
   render() {
@@ -32,16 +33,22 @@ class Main extends Component {
       this.setState({
         goalValue: Math.floor(Math.random() * (max - min + 1)) + min,
       });
+      this.setState({ startMessage: "" });
 
       console.log(this.state.goalValue);
     }
-    function selectCard(value) {
-      selectedcards.push(value.value);
-      this.setState({ sum: this.state.sum + value.value });
-      this.setState({ selected: selectedcards });
-      console.log(value.value);
 
-      console.log(this.state.selected);
+    function selectCard(value) {
+      if (this.state.sum < this.state.goalValue) {
+        selectedcards.push(value.value);
+        this.setState({ sum: this.state.sum + value.value });
+        this.setState({ selected: selectedcards });
+        console.log(value.value);
+
+        console.log(this.state.selected);
+      } else {
+        this.setState({ startMessage: "Press Start Game to begin" });
+      }
     }
     return (
       <Container style={styles.container}>
@@ -56,6 +63,7 @@ class Main extends Component {
           goalValue={this.state.goalValue}
           sum={this.state.sum}
           selected={this.state.selected}
+          startMessage={this.state.startMessage}
         />
         <Row className="justify-content-center">
           {this.state.cards.map((card) => (

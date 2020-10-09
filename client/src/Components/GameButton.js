@@ -10,8 +10,8 @@ function GameButton(props) {
   //   }
 
   return (
-    <Row className="mt-2 justify-content-center">
-      <Col className="col-6 mb-5">
+    <Row className="mt-2 justify-content-center mb-3">
+      <Col className="col-6">
         <Button
           onClick={() => {
             props.start();
@@ -22,7 +22,7 @@ function GameButton(props) {
       </Col>
 
       {props.goalValue > 0 ? (
-        <Col className="col-6 mb-5">Goal Value: {props.goalValue}</Col>
+        <Col className="col-6">Goal Value: {props.goalValue}</Col>
       ) : (
         <Col>Goal Value: Click start game to generate goal value</Col>
       )}
