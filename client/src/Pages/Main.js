@@ -14,10 +14,12 @@ class Main extends Component {
     cards,
     goalValue: 0,
     sum: 0,
+    selected: [],
   };
 
   render() {
     let cardvalue = 0;
+    let selectedcards = [...this.state.selected];
     function card() {
       this.state.cards.filter((card) => {
         console.log(card.value);
@@ -34,8 +36,12 @@ class Main extends Component {
       console.log(this.state.goalValue);
     }
     function selectCard(value) {
+      selectedcards.push(value.value);
       this.setState({ sum: this.state.sum + value.value });
+      this.setState({ selected: selectedcards });
       console.log(value.value);
+
+      console.log(this.state.selected);
     }
     return (
       <Container style={styles.container}>
@@ -49,6 +55,7 @@ class Main extends Component {
           cardvalue={cardvalue}
           goalValue={this.state.goalValue}
           sum={this.state.sum}
+          selected={this.state.selected}
         />
         <Row className="justify-content-center">
           {this.state.cards.map((card) => (
