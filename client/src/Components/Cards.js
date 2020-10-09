@@ -25,7 +25,7 @@ function Cards(props) {
   //     console.log(props.value);
   //   }
   return (
-    <Col className="col-lg-3 col-md-4 col-sm-6">
+    <Col className="col-6 col-lg-3 col-md-4 col-sm-6">
       <img
         style={styles.card}
         src={props.image}
