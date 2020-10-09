@@ -34,7 +34,8 @@ class Main extends Component {
         goalValue: Math.floor(Math.random() * (max - min + 1)) + min,
       });
       this.setState({ startMessage: "" });
-
+      this.setState({ selected: [] });
+      this.setState({ sum: 0 });
       console.log(this.state.goalValue);
     }
 

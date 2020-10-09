@@ -1,10 +1,15 @@
 {
   "name": "laylagame",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Math game for kids",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "npm run client",
+    "client": "cd /home/appsbyma/apps/game/client && npm run start",
+    "install": "cd /home/appsbyma/apps/game/client && npm install",
+    "build": "cd /home/appsbyma/apps/game/client && npm run build"
   },
   "repository": {
     "type": "git",
@@ -15,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/MarciaAdler/laylagame/issues"
   },
-  "homepage": "https://github.com/MarciaAdler/laylagame#readme"
+  "homepage": "https://game.appsbymarcia.com",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
