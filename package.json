@@ -7,9 +7,9 @@
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
     "start:dev": "npm run client",
-    "client": "cd /home/appsbyma/apps/game/client && npm run start",
-    "install": "cd /home/appsbyma/apps/game/client && npm install",
-    "build": "cd /home/appsbyma/apps/game/client && npm run build"
+    "client": "cd client && npm run start",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build"
   },
   "repository": {
     "type": "git",
