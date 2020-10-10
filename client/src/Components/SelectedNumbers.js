@@ -6,6 +6,8 @@ function SelectedNumbers(props) {
     <div>
       <Row className="justify-content-center">
         <p>{props.startMessage}</p>
+      </Row>
+      <Row className="justify-content-center">
         {props.sum === props.goalValue && props.goalValue > 0 ? (
           <p>
             <strong>You Win! Press Start Game to play again</strong>
@@ -22,7 +24,7 @@ function SelectedNumbers(props) {
         )}
       </Row>
       <Row className="justify-content-center">
-        <Col>
+        <Col className="col-12 col-md-6">
           <span>Selected Cards: </span>
           {props.selected.map((num) => (
             <span>{num}&nbsp; </span>

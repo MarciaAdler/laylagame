@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 import Cards from "../Components/Cards";
 import cards from "../cards.json";
-import { Row, Container } from "react-bootstrap";
+import { Row, Container, Col } from "react-bootstrap";
 import GameButton from "../Components/GameButton";
 import SelectedNumbers from "../Components/SelectedNumbers";
 const styles = {
   container: {
     marginTop: "50px",
+  },
+  instructions: {
+    marginRight: "40px",
+    marginLeft: "40px",
+    marginBottom: "40px",
   },
 };
 class Main extends Component {
@@ -53,6 +58,15 @@ class Main extends Component {
     }
     return (
       <Container style={styles.container}>
+        <div style={styles.instructions}>
+          <h3>Instructions</h3>
+          <p>
+            Click start game to generate a random number. Once you have the Goal
+            Value, click on the cards to add the values together to reach the
+            Goal Value.
+          </p>
+        </div>
+
         <GameButton
           card={card}
           cardvalue={cardvalue}
