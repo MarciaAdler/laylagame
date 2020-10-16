@@ -21,3 +21,15 @@ To build this app I used the following technologies:
 - JavaScript
 - NodeJS
 - Express
+
+## How to use my code
+
+To install the code for this app on your local computer complete the following steps:
+
+1. Clone the repository.
+2. Run npm install both on the root folder as well as the client folder.
+3. run npm start
+
+### Note on installing code
+
+If you plan to run the app locally, you do not need to have the backend (server file). You can skip the npm install on the root folder and just work in the client folder and run npm start from there, after running npm install, and the app should work locally.
