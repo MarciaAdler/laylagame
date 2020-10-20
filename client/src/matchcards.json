@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "value": 1,
+    "image": "../images/one.png"
+  },
+  {
+    "id": 2,
+    "value": 1,
+    "image": "../images/1dog.png"
+  },
+  {
+    "id": 3,
+    "value": 2,
+    "image": "../images/two.png"
+  },
+  {
+    "id": 4,
+    "value": 2,
+    "image": "../images/2apples.png"
+  },
+  {
+    "id": 5,
+    "value": 3,
+    "image": "../images/three.png"
+  },
+  {
+    "id": 6,
+    "value": 3,
+    "image": "../images/3bones.png"
+  },
+  {
+    "id": 7,
+    "value": 4,
+    "image": "../images/four.png"
+  },
+  {
+    "id": 8,
+    "value": 4,
+    "image": "../images/4stars.png"
+  },
+  {
+    "id": 9,
+    "value": 5,
+    "image": "../images/five.png"
+  },
+  {
+    "id": 10,
+    "value": 5,
+    "image": "../images/5dolphins.png"
+  }
+]
