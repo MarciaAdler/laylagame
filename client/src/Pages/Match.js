@@ -21,8 +21,8 @@ class Match extends React.Component {
       this.state.matchcards[i] = this.state.matchcards[j];
       this.state.matchcards[j] = temp;
     }
-    console.log("test");
   };
+
   render() {
     let cardvalue = 0;
 
@@ -35,29 +35,32 @@ class Match extends React.Component {
     }
 
     function selectCard(value) {
-      if (selectedcards && selectedcards.length < 2) {
+      if (this.state.selected && this.state.selected.length <= 1) {
+        this.setState({ startMessage: "" });
         selectedcards.push(value.value);
         this.setState({ selected: selectedcards });
-        console.log(value.value);
-      } else {
-        this.setState({ startMessage: "Press Start Game to begin" });
+        if (selectedcards.length === 2) {
+          if (selectedcards[0] === selectedcards[1]) {
+            this.setState({ startMessage: "Match" });
+            this.setState({ selected: [] });
+            selectedcards = [];
+          } else {
+            this.setState({ startMessage: "Pick again" });
+            this.setState({ selected: [] });
+          }
+        }
       }
     }
-    // function shufflecards() {
-    //   for (let i = this.state.matchcards.length - 1; i > 0; i--) {
-    //     const j = Math.floor(Math.random() * i);
-    //     const temp = this.state.matchcards[i];
-    //     this.state.matchcards[i] = this.state.matchcards[j];
-    //     this.state.matchcards[j] = temp;
-    //   }
-    //   console.log("test");
-    // }
+
     function start() {
       this.shufflecards();
+      selectedcards = [];
       this.setState({ selected: [] });
+      this.setState({ startMessage: "" });
     }
     return (
       <Container className="mt-5">
+        {this.state.startMessage}
         <StartGame
           //   shufflecards={shufflecards.bind(this)}
           start={start.bind(this)}
