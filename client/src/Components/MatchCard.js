@@ -12,7 +12,7 @@ const styles = {
 };
 function MatchCard(props) {
   return (
-    <Col className="col-6 col-md-3">
+    <Col className="col-sm-6 col-md-3 col-lg-3">
       <img
         style={styles.card}
         src={props.image}

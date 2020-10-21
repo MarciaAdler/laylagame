@@ -17,11 +17,11 @@ class Match extends React.Component {
     this.shufflecards = this.shufflecards.bind(this);
   }
   shufflecards = () => {
-    for (let i = this.state.matchcards.length - 1; i > 0; i--) {
+    for (let i = this.state.remainingcards.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * i);
       const temp = this.state.matchcards[i];
-      this.state.matchcards[i] = this.state.matchcards[j];
-      this.state.matchcards[j] = temp;
+      this.state.remainingcards[i] = this.state.remainingcards[j];
+      this.state.remainingcards[j] = temp;
     }
   };
 
@@ -38,23 +38,23 @@ class Match extends React.Component {
     function selectCard(value) {
       if (this.state.selected && this.state.selected.length <= 1) {
         this.setState({ startMessage: "" });
-        selectedcards.push(value.value);
-        const index = this.state.matchcards.indexOf(value.id);
-        this.state.indexes.push(index);
+        selectedcards.push(value);
+
         this.setState({ selected: selectedcards });
         if (selectedcards.length === 2) {
-          if (selectedcards[0] === selectedcards[1]) {
+          if (selectedcards[0].value === selectedcards[1].value) {
             this.setState({ startMessage: "Match! Pick again" });
             this.setState({ selected: [] });
-            const remainingCards = [];
-            for (let i = 0; i < this.state.matchcards.length; i++) {
-              const element = this.state.matchcards[i];
-              if (element.value === selectedcards[0]) {
-                this.state.matchcards.splice(i, 1);
+            for (let i = 0; i < this.state.remainingcards.length; i++) {
+              const element = this.state.remainingcards[i];
+              if (
+                element.id === selectedcards[0].id ||
+                element.id === selectedcards[1].id
+              ) {
+                this.state.remainingcards.splice(i, 1);
               }
             }
-            console.log(this.state.matchcards);
-
+            console.log(this.state.remainingcards);
             selectedcards = [];
           } else {
             this.setState({ startMessage: "Incorrect match, Pick again" });
@@ -66,6 +66,7 @@ class Match extends React.Component {
     }
 
     function start() {
+      this.setState({ remainingcards: this.state.matchcards });
       this.shufflecards();
       selectedcards = [];
       this.setState({ selected: [] });
