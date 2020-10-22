@@ -1,8 +1,8 @@
 import React from "react";
-import { Container, ListGroup, ListGroupItem } from "react-bootstrap";
+import { Container, ListGroup, ListGroupItem, Col, Row } from "react-bootstrap";
 const styles = {
   list: {
-    width: "50%",
+    width: "100%",
     marginTop: "50px",
   },
   intro: {
@@ -10,14 +10,17 @@ const styles = {
   },
   maincontainer: {
     paddingBottom: "100px",
-    paddingTop: "50px",
+    padding: "50px",
   },
   listitem: {
     backgroundColor: "#D5C5C8",
     marginBottom: "20px",
+    width: "200px",
+    textAlign: "center",
   },
   listtext: {
     color: "#2B2D42",
+    fontWeight: "bold",
   },
 };
 export default function Main() {
@@ -25,24 +28,34 @@ export default function Main() {
     <Container className="mt-5" style={styles.maincontainer}>
       <div style={styles.intro}>
         <h1>Welcome to Layla's Games</h1>
-        <h3>
+        <h5>
           The games on this site are intended for elementary aged kids. I hope
           your kids enjoy playing them and learn something.
-        </h3>
+        </h5>
       </div>
 
-      <ListGroup style={styles.list}>
-        <ListGroupItem style={styles.listitem}>
-          <a style={styles.listtext} href="/Math">
-            Math Game
-          </a>
-        </ListGroupItem>
-        <ListGroupItem style={styles.listitem}>
-          <a style={styles.listtext} href="/Match">
-            Match Game
-          </a>
-        </ListGroupItem>
-      </ListGroup>
+      <Row style={styles.list} className="d-flex">
+        <Col className="col-12 col-md-6 mx-auto justify-content-center">
+          <ListGroupItem
+            style={styles.listitem}
+            className="mx-auto justify-content-center"
+          >
+            <a style={styles.listtext} href="/Math">
+              Math Game
+            </a>
+          </ListGroupItem>
+        </Col>
+        <Col className="col-12 col-md-6">
+          <ListGroupItem
+            style={styles.listitem}
+            className="mx-auto justify-content-center"
+          >
+            <a style={styles.listtext} href="/Match">
+              Match Game
+            </a>
+          </ListGroupItem>
+        </Col>
+      </Row>
     </Container>
   );
 }
