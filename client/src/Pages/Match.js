@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import matchcards from "../matchcards.json";
 import { Container, Row, Button } from "react-bootstrap";
 import StartGame from "../Components/StartGame";
-
+import Header from "../Components/Header";
 class Match extends React.Component {
   constructor(props) {
     super(props);
@@ -74,6 +74,7 @@ class Match extends React.Component {
     }
     return (
       <Container className="mt-5">
+        <Header />
         {this.state.startMessage}
         <StartGame
           //   shufflecards={shufflecards.bind(this)}

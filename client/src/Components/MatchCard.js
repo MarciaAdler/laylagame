@@ -6,8 +6,6 @@ const styles = {
     height: "100px",
     weight: "auto",
     margin: "20px",
-    border: "solid",
-    borderColor: "blue",
   },
 };
 function MatchCard(props) {

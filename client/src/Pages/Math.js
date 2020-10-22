@@ -4,6 +4,7 @@ import cards from "../cards.json";
 import { Row, Container, Col } from "react-bootstrap";
 import GameButton from "../Components/GameButton";
 import SelectedNumbers from "../Components/SelectedNumbers";
+import Header from "../Components/Header";
 const styles = {
   container: {
     marginTop: "50px",
@@ -58,6 +59,7 @@ class Main extends Component {
     }
     return (
       <Container style={styles.container}>
+        <Header />
         <div style={styles.instructions}>
           <h3>Instructions</h3>
           <p>
