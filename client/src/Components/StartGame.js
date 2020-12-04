@@ -1,17 +1,28 @@
 import React from "react";
-import { Button, Row } from "react-bootstrap";
+import { Button, Row, Col } from "react-bootstrap";
 import MatchCard from "../Components/MatchCard";
 import matchcards from "../matchcards.json";
 function StartGame(props) {
   return (
     <div>
-      <Button
-        onClick={() => {
-          props.start();
-        }}
-      >
-        Start Game
-      </Button>
+      <Row>
+        <Col>
+          <Button
+            onClick={() => {
+            props.start();
+            }}
+          >
+          Start Game
+        </Button>
+      </Col>
+      <Col>
+          <Button onClick={()=>{props.confirmMatch()}}>Confirm Match</Button>
+      </Col>
+      <Col>
+          <Button>No Match</Button>
+      </Col>
+    </Row>
+      
       <div>
         <Row className="justify-content-center">
           {matchcards.map((card) => (
@@ -21,6 +32,11 @@ function StartGame(props) {
               value={card.value}
               image={card.image}
               selectCard={props.selectCard}
+              show={props.show}
+              selected={props.selected}
+              card={props.show}
+              // flipCard={props.flipCard}
+              checkMatch={props.checkMatch}
               //   matchCard={props.matchCard}
             />
           ))}

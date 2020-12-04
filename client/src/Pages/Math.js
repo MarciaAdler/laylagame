@@ -13,6 +13,7 @@ const styles = {
     marginRight: "40px",
     marginLeft: "40px",
     marginBottom: "40px",
+    textAlign: "center",
   },
 };
 class Main extends Component {
@@ -61,7 +62,7 @@ class Main extends Component {
       <Container style={styles.container}>
         <Header />
         <div style={styles.instructions}>
-          <h3>Instructions</h3>
+          <h3>Instructions:</h3>
           <p>
             Click start game to generate a random number. Once you have the Goal
             Value, click on the cards to add the values together to reach the

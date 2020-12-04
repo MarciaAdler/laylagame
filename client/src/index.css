@@ -1,6 +1,7 @@
 html {
-  background-color: #8d99ae;
+  /* background-color: #8d99ae; */
   height: 100vh;
+  background-color: #77bfa3;
 }
 body {
   margin: 0;
@@ -9,7 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #8d99ae;
+  background-color: #77bfa3;
 }
 
 code {

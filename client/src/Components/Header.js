@@ -13,17 +13,17 @@ const styles = {
 export default function Header() {
   return (
     <Row className="mb-4 justify-content-center">
-      <Col className="col-6 col-md-3 text-center">
+      <Col className="col-4 col-md-3 text-center">
         <Button style={styles.button} href="/">
           Home
         </Button>
       </Col>
-      <Col className="col-6 col-md-3 text-center">
+      <Col className="col-4 col-md-3 text-center">
         <Button style={styles.button} href="/math">
           Math Game
         </Button>
       </Col>
-      <Col className="col-6 col-md-3 text-center">
+      <Col className="col-4 col-md-3 text-center">
         <Button style={styles.button} href="/match">
           Match Game
         </Button>

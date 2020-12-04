@@ -7,6 +7,7 @@ const styles = {
   },
   intro: {
     color: "#2B2D42",
+    textAlign: "center",
   },
   maincontainer: {
     paddingBottom: "100px",

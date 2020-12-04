@@ -4,6 +4,7 @@ import matchcards from "../matchcards.json";
 import { Container, Row, Button } from "react-bootstrap";
 import StartGame from "../Components/StartGame";
 import Header from "../Components/Header";
+
 class Match extends React.Component {
   constructor(props) {
     super(props);
@@ -11,8 +12,9 @@ class Match extends React.Component {
       matchcards,
       selected: [],
       startMessage: "",
-      indexes: [],
-      remainingcards: [],
+      remainingcards: matchcards,
+      show: true,
+      checkMatch: false,
     };
     this.shufflecards = this.shufflecards.bind(this);
   }
@@ -25,62 +27,96 @@ class Match extends React.Component {
     }
   };
 
+  // flipCard(card){
+  //   // if(this.state.selected)
+  //   console.log(card)
+
+  //   if (card && this.state.show === false){
+  //     this.setState({ show: true})
+
+  //   } else{
+  //     this.setState({ show: false})
+
+  //   }
+  // }
+
   render() {
-    let cardvalue = 0;
     let selectedcards = [...this.state.selected];
-    function matchCard() {
-      this.state.matchcards.filter((card) => {
-        console.log(card.value);
-        cardvalue = card.value;
-      });
-    }
 
     function selectCard(value) {
       if (this.state.selected && this.state.selected.length <= 1) {
+        this.setState({ show: true });
         this.setState({ startMessage: "" });
         selectedcards.push(value);
-
         this.setState({ selected: selectedcards });
         if (selectedcards.length === 2) {
           if (selectedcards[0].value === selectedcards[1].value) {
-            this.setState({ startMessage: "Match! Pick again" });
-            this.setState({ selected: [] });
-            for (let i = 0; i < this.state.remainingcards.length; i++) {
-              const element = this.state.remainingcards[i];
-              if (
-                element.id === selectedcards[0].id ||
-                element.id === selectedcards[1].id
-              ) {
-                this.state.remainingcards.splice(i, 1);
-              }
-            }
-            console.log(this.state.remainingcards);
-            selectedcards = [];
-          } else {
-            this.setState({ startMessage: "Incorrect match, Pick again" });
-            this.setState({ selected: [] });
-            selectedcards = [];
+            this.setState({ checkMatch: true });
           }
         }
       }
     }
+    function confirmMatch() {
+      if (selectedcards.length === 2) {
+        if (selectedcards[0].value === selectedcards[1].value) {
+          this.setState({ startMessage: "Match! Pick again" });
+          this.setState({ selected: [] });
+          for (let i = 0; i < this.state.remainingcards.length; i++) {
+            const element = this.state.remainingcards[i];
+            if (
+              element.id === selectedcards[0].id ||
+              element.id === selectedcards[1].id
+            ) {
+              this.state.remainingcards.splice(i, 1);
+            }
+          }
+          console.log(this.state.remainingcards);
+          selectedcards = [];
 
+          this.setState({ checkMatch: true });
+        } else {
+          this.setState({ startMessage: "Incorrect match, Pick again" });
+          this.setState({ selected: [] });
+          selectedcards = [];
+
+          this.setState({ show: false });
+          this.setState({ checkMatch: false });
+        }
+      }
+    }
     function start() {
       this.setState({ remainingcards: this.state.matchcards });
+      console.log(this.state.remainingcards);
       this.shufflecards();
+
+      this.setState({ show: false });
       selectedcards = [];
       this.setState({ selected: [] });
       this.setState({ startMessage: "" });
     }
     return (
-      <Container className="mt-5">
+      <Container className="mt-5 text-center">
         <Header />
+        <div>
+          <h3>Instructions:</h3>
+          <p>
+            {" "}
+            To play select a card and then select a second card trying to find
+            two cards that represent the same number.
+          </p>
+        </div>
         {this.state.startMessage}
         <StartGame
           //   shufflecards={shufflecards.bind(this)}
           start={start.bind(this)}
           //   matchcards={this.state.matchcards}
           selectCard={selectCard.bind(this)}
+          show={this.state.show}
+          // flipCard={this.flipCard}
+          selected={this.state.selected}
+          card={this.state.card}
+          confirmMatch={confirmMatch.bind(this)}
+          checkMatch={this.state.checkMatch}
         />
       </Container>
     );
