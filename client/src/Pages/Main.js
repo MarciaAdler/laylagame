@@ -41,7 +41,7 @@ export default function Main() {
             style={styles.listitem}
             className="mx-auto justify-content-center"
           >
-            <a style={styles.listtext} href="/Math">
+            <a style={styles.listtext} href="/math">
               Math Game
             </a>
           </ListGroupItem>
@@ -51,7 +51,7 @@ export default function Main() {
             style={styles.listitem}
             className="mx-auto justify-content-center"
           >
-            <a style={styles.listtext} href="/Match">
+            <a style={styles.listtext} href="/match">
               Match Game
             </a>
           </ListGroupItem>
