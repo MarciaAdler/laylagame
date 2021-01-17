@@ -52,16 +52,14 @@ class Match extends React.Component {
         startcards[i] = startcards[j];
         startcards[j] = temp;
       }
-      console.log(startcards);
     }
     function selectCard(card) {
       this.setState({ checkMatch: true });
       if (this.state.selected && this.state.selected.length <= 1) {
         card = { ...card, showcard: true };
         this.setState({ show: true });
-        console.log(card);
+
         this.setState({ flip: true });
-        console.log(this.state.checkMatch);
 
         this.setState({ startMessage: "" });
         selectedcards.push(card);
@@ -77,7 +75,6 @@ class Match extends React.Component {
     function confirmMatch() {
       if (selectedcards.length === 2) {
         if (selectedcards[0].value === selectedcards[1].value) {
-          this.setState({ startMessage: "Match! Pick again" });
           this.setState({ selected: [] });
           for (let i = this.state.remainingcards.length - 1; i >= 0; i--) {
             const element = this.state.remainingcards[i];
@@ -88,13 +85,39 @@ class Match extends React.Component {
               this.state.remainingcards.splice(i, 1);
             }
           }
+          if (this.state.remainingcards.length < 1) {
+            this.setState({
+              startMessage: "Congrats! You Win! Click start to play again!",
+            });
+          } else {
+            this.setState({ startMessage: "Match! Pick again" });
+          }
           // this.setState({ flip: false });
-          console.log(this.state.remainingcards);
+
           selectedcards = [];
           this.setState({ show: false });
           this.setState({ checkMatch: false });
         } else {
           // this.setState({ flip: false });
+          this.setState({ startMessage: "Incorrect, try again!" });
+          // this.state.selected.forEach((card) => {
+          //   card = { ...card, showcard: false };
+          // });
+          // this.setState((prevState) => {
+          //   return { run: prevState.run + 1 };
+          // });
+          // console.log(this.state.selected);
+          // this.setState({ selected: [] });
+          // selectedcards = [];
+
+          // this.setState({ show: false });
+          // this.setState({ checkMatch: false });
+        }
+      }
+    }
+    function noMatch() {
+      if (selectedcards.length === 2) {
+        if (selectedcards[0].value !== selectedcards[1].value) {
           this.setState({ startMessage: "Incorrect match, Pick again" });
           this.state.selected.forEach((card) => {
             card = { ...card, showcard: false };
@@ -102,12 +125,14 @@ class Match extends React.Component {
           this.setState((prevState) => {
             return { run: prevState.run + 1 };
           });
-          console.log(this.state.selected);
+
           this.setState({ selected: [] });
           selectedcards = [];
 
           this.setState({ show: false });
           this.setState({ checkMatch: false });
+        } else {
+          this.setState({ startMessage: "Incorrect, try again!" });
         }
       }
     }
@@ -118,9 +143,8 @@ class Match extends React.Component {
       });
 
       shufflecards();
-      console.log(startcards);
+
       this.setState({ remainingcards: startcards });
-      console.log(this.state.remainingcards);
 
       // this.setState({ show: false });
       selectedcards = [];
@@ -153,6 +177,7 @@ class Match extends React.Component {
           remainingcards={this.state.remainingcards}
           run={this.state.run}
           flip={this.state.flip}
+          noMatch={noMatch.bind(this)}
         />
       </Container>
     );

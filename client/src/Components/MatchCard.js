@@ -12,29 +12,18 @@ function MatchCard(props) {
   const [flip, setFlip] = useState(false);
 
   useEffect(() => {
-    console.log(props.card);
-    console.log(props.checkMatch);
     if (props.flip === true && flip === true) {
-      console.log("auto run");
       flipCard(props.id);
     }
   }, [props.run]);
 
   function flipCard(card) {
-    console.log("running");
     if (flip === false) {
       setFlip(true);
     } else if (flip === true) {
       setFlip(false);
     }
   }
-
-  // function checkMatch() {
-  //   console.log("test");
-  //   if (props.checkMatch === false) {
-  //     setFlip(false);
-  //   }
-  // }
 
   return (
     <Col className="col-6 col-md-3 col-lg-3">

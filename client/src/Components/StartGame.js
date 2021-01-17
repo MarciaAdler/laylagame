@@ -25,7 +25,13 @@ function StartGame(props) {
           </Button>
         </Col>
         <Col>
-          <Button>No Match</Button>
+          <Button
+            onClick={() => {
+              props.noMatch();
+            }}
+          >
+            No Match
+          </Button>
         </Col>
       </Row>
 
