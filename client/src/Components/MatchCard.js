@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Col } from "react-bootstrap";
 
 const styles = {
@@ -9,30 +9,33 @@ const styles = {
   },
 };
 function MatchCard(props) {
-  const [flip, setFlip] = useState(false)
-  function flipCard(card){
-    console.log(props.selected.length)
-    if(flip === false){
-      setFlip(true)
-    } else {
-      setFlip(false)
-    }
-  }  
+  const [flip, setFlip] = useState(false);
 
-  function checkMatch(){
-    if(props.checkMatch === false) {
-      setFlip(false)
+  useEffect(() => {
+    console.log(props.card);
+    console.log(props.checkMatch);
+    if (props.flip === true && flip === true) {
+      console.log("auto run");
+      flipCard(props.id);
+    }
+  }, [props.run]);
+
+  function flipCard(card) {
+    console.log("running");
+    if (flip === false) {
+      setFlip(true);
+    } else if (flip === true) {
+      setFlip(false);
     }
   }
 
-      // if (card && this.state.show === false){
-      //   this.setState({ show: true})
-  
-      // } else{
-      //   this.setState({ show: false})
-        
-      // }
-    
+  // function checkMatch() {
+  //   console.log("test");
+  //   if (props.checkMatch === false) {
+  //     setFlip(false);
+  //   }
+  // }
+
   return (
     <Col className="col-6 col-md-3 col-lg-3">
       {flip === false ? (
@@ -42,8 +45,8 @@ function MatchCard(props) {
           alt="flip card"
           onClick={() => {
             props.selectCard(props);
-            
-            flipCard(props.id)
+
+            flipCard(props.id);
           }}
         />
       ) : (
@@ -51,7 +54,11 @@ function MatchCard(props) {
           style={styles.card}
           src={props.image}
           alt={props.value}
-          
+          onClick={() => {
+            props.selectCard(props);
+
+            flipCard(props.id);
+          }}
         />
       )}
     </Col>
