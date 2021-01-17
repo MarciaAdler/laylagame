@@ -22,6 +22,7 @@ const styles = {
   listtext: {
     color: "#2B2D42",
     fontWeight: "bold",
+    textDecoration: "none",
   },
 };
 export default function Main() {
