@@ -3,7 +3,12 @@ import matchcards from "../matchcards.json";
 import { Container, Row, Button } from "react-bootstrap";
 import StartGame from "../Components/StartGame";
 import Header from "../Components/Header";
-
+const styles = {
+  instructions: {
+    marginLeft: "30px",
+    marginRight: "30px",
+  },
+};
 class Match extends React.Component {
   constructor(props) {
     super(props);
@@ -156,10 +161,13 @@ class Match extends React.Component {
         <Header />
         <div>
           <h3>Instructions:</h3>
-          <p>
+          <p style={styles.instructions}>
             {" "}
-            To play select a card and then select a second card trying to find
-            two cards that represent the same number.
+            To play click "Start Game" to generate the cards. Select a card and
+            then select a second card trying to find two cards that represent
+            the same number. If you have a match, click "Confirm Match" and
+            select again. If your two cards don't match, click "No Match" and
+            select again. Keep playing until all cards have been matched.
           </p>
         </div>
         {this.state.startMessage}
