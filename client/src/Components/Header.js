@@ -28,6 +28,11 @@ export default function Header() {
           Match Game
         </Button>
       </Col>
+      <Col className="col-4 col-md-3 text-center">
+        <Button style={styles.button} href="/drawmatch">
+          Draw Match
+        </Button>
+      </Col>
     </Row>
   );
 }
