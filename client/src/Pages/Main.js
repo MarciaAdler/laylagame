@@ -5,6 +5,9 @@ const styles = {
     width: "100%",
     marginTop: "50px",
   },
+  list2: {
+    width: "100%",
+  },
   intro: {
     color: "#2B2D42",
     textAlign: "center",
@@ -18,6 +21,8 @@ const styles = {
     marginBottom: "20px",
     width: "200px",
     textAlign: "center",
+    borderRadius: ".25rem",
+    border: "0",
   },
   listtext: {
     color: "#2B2D42",
@@ -54,6 +59,18 @@ export default function Main() {
           >
             <a style={styles.listtext} href="/match">
               Match Game
+            </a>
+          </ListGroupItem>
+        </Col>
+      </Row>
+      <Row style={styles.list2} className="d-flex">
+        <Col className="col-12 col-md-6">
+          <ListGroupItem
+            style={styles.listitem}
+            className="mx-auto justify-content-center"
+          >
+            <a style={styles.listtext} href="/drawmatch">
+              Draw Match
             </a>
           </ListGroupItem>
         </Col>
