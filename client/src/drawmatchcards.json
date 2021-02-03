@@ -1,0 +1,104 @@
+[
+    {
+        "id": 1,
+        "value": 10,
+        "image": "../images/DM_ten.png"
+
+    },
+    {
+        "id": 2,
+        "value": 10,
+        "image": "../images/DM_ten_images.png"
+    },
+    {
+        "id": 3,
+        "value": 30,
+        "image": "../images/DM_thirty.png"
+    },
+    {
+        "id": 4,
+        "value": 30,
+        "image": "../images/DM_thiry_images.png"
+    },
+    {
+        "id": 5,
+        "value": 24,
+        "image": "../images/DM_twentyfour.png"
+    },
+    {
+        "id": 6,
+        "value": 24,
+        "image": "../images/DM_twentyfour_images.png"
+    },
+    {
+        "id": 7,
+        "value": 15,
+        "image": "../images/DM_fifteen.png"
+    },
+    {
+        "id": 8,
+        "value": 15,
+        "image": "../images/DM_fifteen_images.png"
+    },
+    {
+        "id": 9,
+        "value": 20,
+        "image": "../images/DM_twenty.png"
+    },
+    {
+        "id": 10,
+        "value": 20,
+        "image": "../images/DM_twenty_images.png"
+    },
+    {
+        "id": 11,
+        "value": 18,
+        "image": "../images/DM_eighteen.png"
+    },
+    {
+        "id": 12,
+        "value": 18,
+        "image": "../images/DM_eighteen_images.png"
+    },
+    {
+        "id": 13,
+        "value": 14,
+        "image": "../images/DM_fourteen.png"
+    },
+    {
+        "id": 14,
+        "value": 14,
+        "image": "../images/DM_fourteen_images.png"
+    },
+    {
+        "id": 15,
+        "value": 12,
+        "image": "../images/DM_twelve.png"
+    },
+    {
+        "id": 16,
+        "value": 12,
+        "image": "../images/DM_twelve_images.png"
+    },
+    {
+        "id": 17,
+        "value": 16,
+        "image": "../images/DM_sixteen.png"
+    },
+    {
+        "id": 18,
+        "value": 16,
+        "image": "../images/DM_sixteen_images.png"
+    },
+    {
+        "id": 19,
+        "value": 9,
+        "image": "../images/DM_nine.png"
+    },
+    {
+        "id": 20,
+        "value": 9,
+        "image": "../images/DM_nine_images.png"
+    }
+
+]
