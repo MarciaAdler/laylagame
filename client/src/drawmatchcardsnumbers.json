@@ -1,0 +1,63 @@
+[
+    {
+        "id": 1,
+        "value": 10,
+        "image": "../images/DM_ten.png"
+
+    },
+    
+    {
+        "id": 3,
+        "value": 30,
+        "image": "../images/DM_thirty.png"
+    },
+    
+    {
+        "id": 5,
+        "value": 24,
+        "image": "../images/DM_twentyfour.png"
+    },
+    
+    {
+        "id": 7,
+        "value": 15,
+        "image": "../images/DM_fifteen.png"
+    },
+    
+    {
+        "id": 9,
+        "value": 20,
+        "image": "../images/DM_twenty.png"
+    },
+    
+    {
+        "id": 11,
+        "value": 18,
+        "image": "../images/DM_eighteen.png"
+    },
+    
+    {
+        "id": 13,
+        "value": 14,
+        "image": "../images/DM_fourteen.png"
+    },
+    
+    {
+        "id": 15,
+        "value": 12,
+        "image": "../images/DM_twelve.png"
+    },
+    
+    {
+        "id": 17,
+        "value": 16,
+        "image": "../images/DM_sixteen.png"
+    },
+    
+    {
+        "id": 19,
+        "value": 9,
+        "image": "../images/DM_nine.png"
+    }
+
+]
