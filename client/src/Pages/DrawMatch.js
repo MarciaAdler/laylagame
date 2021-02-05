@@ -12,10 +12,16 @@ class DrawMatch extends React.Component {
       card2: 0,
       startMessage: "",
       choosecards: [],
-      cardtomatch: 0,
+      cardtomatch: 1,
       flip: false,
       run: 0,
     };
+    this.nextCard = this.nextCard.bind(this);
+  }
+  nextCard() {
+    this.setState((prevState) => {
+      return { cardtomatch: prevState.cardtomatch + 1 };
+    });
   }
   render() {
     const cards = drawmatchcards;
@@ -37,11 +43,11 @@ class DrawMatch extends React.Component {
       }
     }
     function selectCard(card) {
+      this.setState({ startMessage: "" });
       console.log(card);
       if (this.state.card2 === 0) {
         this.setState({ card2: card });
         this.setState({ flip: true });
-        this.setState({ startMessage: "" });
       }
     }
     function noMatch() {
@@ -57,8 +63,11 @@ class DrawMatch extends React.Component {
         });
       }
     }
+
     function match() {
       if (this.state.card1.value === this.state.card2.value) {
+        this.nextCard();
+        console.log(this.state.cardtomatch);
         for (let i = this.state.choosecards.length - 1; i >= 0; i--) {
           const element = this.state.choosecards[i];
           if (element.id === this.state.card2.id) {
@@ -71,11 +80,9 @@ class DrawMatch extends React.Component {
           });
         } else {
           this.setState({ startMessage: "Match!" });
+          this.setState({ card1: drawacard[this.state.cardtomatch] });
         }
-        this.setState((prevState) => {
-          return { cardtomatch: prevState.cardtomatch + 1 };
-        });
-        this.setState({ card1: drawacard[this.state.cardtomatch] });
+        this.setState({ card2: 0 });
       } else {
         this.setState({
           startMessage: "No match, try again!",
@@ -92,7 +99,8 @@ class DrawMatch extends React.Component {
       shuffledrawcards();
       console.log(cards);
       this.setState({ choosecards: cards });
-      this.setState({ card1: drawacard[this.state.cardtomatch] });
+      console.log(drawacard);
+      this.setState({ card1: drawacard[0] });
     }
     return (
       <Container className="mt-5 text-center">
