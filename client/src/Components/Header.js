@@ -6,8 +6,15 @@ const styles = {
     borderColor: "#D5C5C8",
     color: "#37323E",
     fontWeight: "bold",
-    width: "125px",
+    width: "102px",
     marginBottom: "10px",
+    height: "50px",
+    marginTop: "10px",
+    margin: "2px",
+    padding: "0",
+    display: "inline-block",
+    textAlign: "center",
+    lineHeight: "50px",
   },
 };
 export default function Header() {
