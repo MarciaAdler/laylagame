@@ -142,6 +142,9 @@ class Match extends React.Component {
       }
     }
     function start() {
+      this.setState((prevState) => {
+        return { run: prevState.run + 1 };
+      });
       matchcards.forEach((card) => {
         card["showcard"] = false;
         startcards.push(card);

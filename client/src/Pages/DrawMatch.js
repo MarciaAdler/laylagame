@@ -24,7 +24,7 @@ class DrawMatch extends React.Component {
     });
   }
   render() {
-    const cards = drawmatchcards;
+    const cards = [];
     const drawacard = drawcards;
     function shufflecards() {
       for (let i = cards.length - 1; i > 0; i--) {
@@ -95,11 +95,14 @@ class DrawMatch extends React.Component {
       }
     }
     function start() {
+      drawmatchcards.forEach((card) => {
+        cards.push(card);
+      });
       shufflecards();
       shuffledrawcards();
-      console.log(cards);
+
       this.setState({ choosecards: cards });
-      console.log(drawacard);
+
       this.setState({ card1: drawacard[0] });
     }
     return (
@@ -107,7 +110,13 @@ class DrawMatch extends React.Component {
         <Header />
         <div>
           <h3>Instructions</h3>
-          <p></p>
+          <p>
+            Click "Start" to show the first card. A card with a number will show
+            and you will need to find the matching card with the number of
+            images that match the number on the card. If you have a match click
+            "Match", if there is no match, click "No Match" to choose again.
+            Match all the cards and you win!
+          </p>
         </div>
         {this.state.startMessage}
         <DMStartGame
