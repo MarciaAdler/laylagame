@@ -2,6 +2,14 @@ import React from "react";
 import { Button, Row, Col } from "react-bootstrap";
 import MatchCard from "../Components/MatchCard";
 import matchcards from "../matchcards.json";
+const styles = {
+  correct: {
+    color: "darkgreen",
+  },
+  wrong: {
+    color: "red",
+  },
+};
 function StartGame(props) {
   return (
     <div>
@@ -21,7 +29,8 @@ function StartGame(props) {
               props.confirmMatch();
             }}
           >
-            Confirm Match
+            Confirm Match &nbsp;
+            <i class="fas fa-check-circle" style={styles.correct}></i>
           </Button>
         </Col>
         <Col>
@@ -30,7 +39,8 @@ function StartGame(props) {
               props.noMatch();
             }}
           >
-            No Match
+            No Match &nbsp;
+            <i class="far fa-times-circle" style={styles.wrong}></i>
           </Button>
         </Col>
       </Row>

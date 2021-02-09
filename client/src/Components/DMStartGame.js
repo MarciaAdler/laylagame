@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Row, Col } from "react-bootstrap";
 import ChooseCard from "../Components/ChooseCard";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const styles = {
   card1: {
     height: "100px",
@@ -10,6 +11,16 @@ const styles = {
   row: {
     display: "flex",
     alignItems: "center",
+  },
+  // button: {
+  //   width: "100px",
+  //   height: "50px",
+  // },
+  wrong: {
+    color: "red",
+  },
+  correct: {
+    color: "darkgreen",
   },
 };
 function DMStartGame(props) {
@@ -28,11 +39,13 @@ function DMStartGame(props) {
 
         <Col>
           <Button
+            style={styles.button}
             onClick={() => {
               props.match();
             }}
           >
-            Match
+            Match &nbsp;
+            <i class="fas fa-check-circle" style={styles.correct}></i>
           </Button>
         </Col>
         <Col>
@@ -41,7 +54,8 @@ function DMStartGame(props) {
               props.noMatch();
             }}
           >
-            No Match
+            No Match &nbsp;
+            <i class="far fa-times-circle" style={styles.wrong}></i>
           </Button>
         </Col>
       </Row>

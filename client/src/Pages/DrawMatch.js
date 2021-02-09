@@ -4,6 +4,14 @@ import Header from "../Components/Header";
 import drawmatchcards from "../drawmatchcardsimages.json";
 import DMStartGame from "../Components/DMStartGame";
 import drawcards from "../drawmatchcardsnumbers.json";
+const styles = {
+  wrong: {
+    color: "red",
+  },
+  correct: {
+    color: "darkgreen",
+  },
+};
 class DrawMatch extends React.Component {
   constructor(props) {
     super(props);
@@ -114,8 +122,10 @@ class DrawMatch extends React.Component {
             Click "Start" to show the first card. A card with a number will show
             and you will need to find the matching card with the number of
             images that match the number on the card. If you have a match click
-            "Match", if there is no match, click "No Match" to choose again.
-            Match all the cards and you win!
+            "Match <i class="fas fa-check-circle" style={styles.correct}></i>",
+            if there is no match, click "No Match{" "}
+            <i class="far fa-times-circle" style={styles.wrong}></i>" to choose
+            again. Match all the cards and you win!
           </p>
         </div>
         {this.state.startMessage}

@@ -8,6 +8,12 @@ const styles = {
     marginLeft: "30px",
     marginRight: "30px",
   },
+  correct: {
+    color: "darkgreen",
+  },
+  wrong: {
+    color: "red",
+  },
 };
 class Match extends React.Component {
   constructor(props) {
@@ -168,9 +174,11 @@ class Match extends React.Component {
             {" "}
             To play click "Start Game" to generate the cards. Select a card and
             then select a second card trying to find two cards that represent
-            the same number. If you have a match, click "Confirm Match" and
-            select again. If your two cards don't match, click "No Match" and
-            select again. Keep playing until all cards have been matched.
+            the same number. If you have a match, click "Confirm Match{" "}
+            <i class="fas fa-check-circle" style={styles.correct}></i>" and
+            select again. If your two cards don't match, click "No Match{" "}
+            <i class="far fa-times-circle" style={styles.wrong}></i>" and select
+            again. Keep playing until all cards have been matched.
           </p>
         </div>
         {this.state.startMessage}
