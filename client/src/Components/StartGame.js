@@ -9,6 +9,11 @@ const styles = {
   wrong: {
     color: "red",
   },
+  button: {
+    backgroundColor: "#ABA9C3",
+    color: "black",
+    border: "grey",
+  },
 };
 function StartGame(props) {
   return (
@@ -16,6 +21,7 @@ function StartGame(props) {
       <Row>
         <Col>
           <Button
+            style={styles.button}
             onClick={() => {
               props.start();
             }}
@@ -25,6 +31,7 @@ function StartGame(props) {
         </Col>
         <Col>
           <Button
+            style={styles.button}
             onClick={() => {
               props.confirmMatch();
             }}
@@ -35,6 +42,7 @@ function StartGame(props) {
         </Col>
         <Col>
           <Button
+            style={styles.button}
             onClick={() => {
               props.noMatch();
             }}

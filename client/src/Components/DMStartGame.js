@@ -12,10 +12,12 @@ const styles = {
     display: "flex",
     alignItems: "center",
   },
-  // button: {
-  //   width: "100px",
-  //   height: "50px",
-  // },
+  button: {
+    backgroundColor: "#ABA9C3",
+    color: "black",
+    border: "grey",
+  },
+
   wrong: {
     color: "red",
   },
@@ -29,6 +31,7 @@ function DMStartGame(props) {
       <Row style={styles.row}>
         <Col>
           <Button
+            style={styles.button}
             onClick={() => {
               props.start();
             }}
@@ -50,6 +53,7 @@ function DMStartGame(props) {
         </Col>
         <Col>
           <Button
+            style={styles.button}
             onClick={() => {
               props.noMatch();
             }}
