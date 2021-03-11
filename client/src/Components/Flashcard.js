@@ -5,6 +5,7 @@ const styles = {
     height: "100px",
     margin: "10px",
     width: "100px",
+    borderRadius: "1rem",
   },
 };
 export default function Flashcard(props) {

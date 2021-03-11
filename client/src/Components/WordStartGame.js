@@ -1,14 +1,20 @@
 import React from "react";
 import { Button, Row, Col } from "react-bootstrap";
 import Flashcard from "../Components/Flashcard";
-
+const styles = {
+  button: {
+    backgroundColor: "#ABA9C3",
+    color: "black",
+    border: "grey",
+  },
+};
 export default function WordStartGame(props) {
   return (
     <div>
       <Row>
         <Col>
           <Button
-            // style={styles.button}
+            style={styles.button}
             onClick={() => {
               props.start();
             }}

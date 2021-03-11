@@ -55,15 +55,20 @@ class Word extends React.Component {
       console.log(words);
     }
     function selectCard(card) {
-      console.log(card);
-      if (card.letter === this.state.letter) {
-        this.setState({
-          startMessage: `Correct ${card.value} starts with a(n) "${this.state.letter}"`,
-        });
-        this.nextCard();
-        this.setState({ letter: words[this.state.cardtomatch].letter });
+      if (this.state.cardtomatch < 26) {
+        if (card.letter === this.state.letter) {
+          this.setState({
+            startMessage: `Correct "${card.value}" starts with a(n) "${this.state.letter}"`,
+          });
+          this.nextCard();
+          this.setState({ letter: words[this.state.cardtomatch].letter });
+        } else {
+          this.setState({ startMessage: `Incorrect. Try again.` });
+        }
       } else {
-        this.setState({ startMessage: `Incorrect. Try again.` });
+        this.setState({
+          startMessage: "You Win! Game over. Click Start Game to play again.",
+        });
       }
     }
     return (
@@ -71,7 +76,13 @@ class Word extends React.Component {
         <Header />
         <div>
           <h3>Instructions:</h3>
-          <p style={styles.instructions}> Add instructions here</p>
+          <p style={styles.instructions}>
+            To start the game and reveal the cards, click "Start Game". The goal
+            is to find the card with the image that starts with the letter
+            identified next to the "Start Game" button. Once you make all the
+            matches to every letter of the alphabet, you win, and you can click
+            "Start Game" to play again.
+          </p>
         </div>
 
         <WordStartGame
