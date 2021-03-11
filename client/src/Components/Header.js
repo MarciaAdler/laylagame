@@ -42,7 +42,7 @@ export default function Header() {
         </Button>
       </Col>
       <Col className="col-4 col-md-2 text-center">
-        <Button style={styles.button} href="/drawmatch">
+        <Button style={styles.button} href="/word">
           Word
         </Button>
       </Col>
