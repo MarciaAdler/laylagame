@@ -1,0 +1,158 @@
+[{
+  "id":1,
+  "image": "../images/word_apple.jpg",
+  "value": "Apple",
+  "letter": "A"
+},
+{
+    "id": 2,
+    "image": "../images/word_banana.jpg",
+    "value":"Banana",
+    "letter":"B"
+},
+{
+    "id":3,
+    "image":"../images/word_cat.jpg",
+    "value": "Cat",
+    "letter":"C"
+},
+{
+    "id":4,
+    "image": "../images/word_dog.png",
+    "value":"Dog",
+    "letter":"D"
+},
+{
+    "id": 5,
+    "image": "../images/word_elephant.jpeg",
+    "value":"Elephant",
+    "letter":"E"
+},
+{
+    "id":6,
+    "image": "../images/word_frog.png",
+    "value":"Frog",
+    "letter":"F"
+},
+{
+    "id": 7,
+    "image": "../images/word_guitar.jpg",
+    "value": "Guitar",
+    "letter": "G"
+},
+{
+    "id": 8,
+    "image":"../images/word_hat.png",
+    "value":"Hat",
+    "letter":"H"
+}, 
+{
+    "id": 9,
+    "image":"../images/word_icecream.png",
+    "value": "Ice-cream",
+    "letter":"I"
+},
+{
+    "id":10,
+    "image": "../images/word_jellyfish.png",
+    "value":"Jellyfish",
+    "letter": "J"
+}, 
+{
+    "id": 11,
+    "image":"../images/word_kite.png",
+    "value":"Kite",
+    "letter":"K"
+},
+{
+    "id": 12,
+    "image":"../images/word_lemon.jpg",
+    "value": "Lemon",
+    "letter":"L"
+},
+{
+    "id": 13,
+    "image":"../images/word_monkey.jpg",
+    "value":"Monkey",
+    "letter":"M"
+},
+{
+    "id": 14,
+    "image":"../images/word_ninja.png",
+    "value":"Ninja",
+    "letter":"N"
+},
+{
+    "id":15,
+    "image":"../images/word_owl.png",
+    "value": "Owl",
+    "letter":"O"
+},
+{
+    "id": 16,
+    "image":"../images/word_penguin.png",
+    "value": "Penguin",
+    "letter": "P"
+},
+{
+    "id":17,
+    "image":"../images/word_queen.png",
+    "value": "Queen",
+    "letter":"Q"
+},
+{
+    "id": 18,
+    "image": "../images/word_rainbow.jpg",
+    "value": "Rainbow",
+    "letter":"R"
+},
+{
+    "id": 19,
+    "image":"../images/word_socks.jpg",
+    "value": "Socks",
+    "letter": "S"
+},
+{
+    "id": 20,
+    "image": "../images/word_turtle.png",
+    "value": "Turtle",
+    "letter":"T"
+},
+{
+    "id": 21,
+    "image": "../images/word_umbrella.png",
+    "value": "Umbrella",
+    "letter":"U"
+},
+{
+    "id": 22,
+    "image":"../images/word_volcano.jpg",
+    "value": "Volcano",
+    "letter":"V"
+},
+{
+    "id": 23,
+    "image": "../images/word_watermelon.jpeg",
+    "value": "Watermelon",
+    "letter":"W"
+},
+{
+    "id": 24,
+    "image":"../images/word_xylophone.jpg",
+    "value": "Xylophone",
+    "letter": "X"
+},
+{
+    "id": 25,
+    "image": "../images/word_yo-yo.jpg",
+    "value":"Yo-yo",
+    "letter": "Y"
+},
+{
+    "id": 26,
+    "image":"../images/word_zipper.jpg",
+    "value": "Zipper",
+    "letter":"Z"
+}
+
+]

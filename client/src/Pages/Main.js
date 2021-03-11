@@ -74,6 +74,16 @@ export default function Main() {
             </a>
           </ListGroupItem>
         </Col>
+        <Col className="col-12 col-md-6">
+          <ListGroupItem
+            style={styles.listitem}
+            className="mx-auto justify-content-center"
+          >
+            <a style={styles.listtext} href="/word">
+              Word
+            </a>
+          </ListGroupItem>
+        </Col>
       </Row>
     </Container>
   );
