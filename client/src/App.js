@@ -5,6 +5,7 @@ import Main from "./Pages/Main";
 import DrawMatch from "./Pages/DrawMatch";
 import Word from "./Pages/Word";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           </Switch>
         </div>
       </Router>
+      <Analytics />
     </div>
   );
 }
