@@ -1,6 +1,10 @@
 {
-  "buildCommand": "DISABLE_ESLINT_PLUGIN=true npm run build",
   "outputDirectory": "build",
+  "build": {
+    "env": {
+      "DISABLE_ESLINT_PLUGIN": "true"
+    }
+  },
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
