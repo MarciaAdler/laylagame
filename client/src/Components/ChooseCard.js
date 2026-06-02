@@ -10,7 +10,7 @@ function ChooseCard(props) {
     if (flip === true) {
       flipCard(props.card.id);
     }
-  }, [props.run]);
+  }, [props.run]); // eslint-disable-line react-hooks/exhaustive-deps
   function flipCard(card) {
     if (flip === false) {
       setFlip(true);

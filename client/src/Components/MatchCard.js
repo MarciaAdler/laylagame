@@ -15,7 +15,7 @@ function MatchCard(props) {
     if (props.flip === true && flip === true) {
       flipCard(props.id);
     }
-  }, [props.run]);
+  }, [props.run]); // eslint-disable-line react-hooks/exhaustive-deps
 
   function flipCard(card) {
     if (flip === false) {

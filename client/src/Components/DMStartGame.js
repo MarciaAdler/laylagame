@@ -1,7 +1,6 @@
 import React from "react";
 import { Button, Row, Col } from "react-bootstrap";
 import ChooseCard from "../Components/ChooseCard";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const styles = {
   card1: {
     height: "100px",

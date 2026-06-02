@@ -1,6 +1,5 @@
 import React from "react";
 import Math from "./Pages/Math";
-import Count from "./Pages/Count";
 import Match from "./Pages/Match";
 import Main from "./Pages/Main";
 import DrawMatch from "./Pages/DrawMatch";
