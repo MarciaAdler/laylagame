@@ -10,7 +10,7 @@ Layla's game is a math game for kids (elementary school aged) where players star
 
 ## Live App
 
-The live app can be found and played at <https://game.appsbymarcia.com>
+The live app can be found and played at <https://laylagame.vercel.app/
 
 ## Technologies Used
 
